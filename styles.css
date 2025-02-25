@@ -16,6 +16,45 @@
     --Light-Grayish-Background: hsl(240, 17%, 98%);
 }
 
+
+/* open-sans-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/open-sans-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+/* raleway-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/raleway-v34-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* raleway-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/raleway-v34-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+    
+.rail-way-large {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+.rail-way-regular {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+.opensans {
+    font-family: 'Open Sans';
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +64,7 @@
 html,
 body {
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -60,8 +100,7 @@ nav li {
     margin-bottom: 100px;
 }
 
-.first-col,
-.second-div {
+.padding-col {
     padding: 1.5rem;
 }
 
@@ -82,6 +121,7 @@ nav li {
 }
 
 .large-txt {
+    font-family: 'Raleway';
     font-size: 35px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -121,6 +161,7 @@ nav li {
 .second-div {
     background-color: var(--Light-Grayish-Background);
     padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 .stay-productive {
@@ -160,6 +201,10 @@ nav li {
     margin: 0 auto;
 }
 
+.middle-comment {
+    margin: .7rem 0;
+}
+
 .profile {
     display: flex;
     align-items: center;
@@ -170,12 +215,67 @@ nav li {
     object-position: center;
     object-fit: contain;
     border-radius: 500px;
+    margin-right: 10px;
+}
+.profile-details p {
+    font-weight: 700;
 }
 
+.get-access {
+    text-align: center;
+    background-color: var(--Desaturated-Blue);
+    padding: 3rem 2rem;
+    color: #fff;
+}
+.get-text {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    max-width: 419px;
+}
+.get-text .medium-txt {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.second-form {
+    width: 230px;
+    padding: .5rem;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.get-input button {
+    color: #fff;
+    background-color: var(--Bright-Blue);
+    border: none;
+}
+
+
+
+.break-line {
+    line-height: 2rem;
+    margin: 1rem 0;
+    width: 300px;
+}
+
+footer {
+    padding: 3rem 2rem;
+    color: #fff;
+    background-color: var(--Very-Dark-Blue);
+}
+.footer-logo img {
+    fill: #fff;
+}
+.address img {
+    margin-right: 10px;
+}
 
 @media (min-width: 700px) {
     .second-col {
         background: url(images/bg-curve-desktop.svg) no-repeat top/100% 100px;
+    }
+    .footer-flex {
+        display: flex;
     }
 }
 
@@ -194,11 +294,14 @@ nav li {
         text-align: left;
     }
     .files-img,
-    .all-files,
-    .stay-productive,
     .people-img {
         margin: 0;
         width: 46%;
+    }
+    .all-files,
+    .stay-productive {
+        max-width: 50%;
+        margin: 0;
     }
     .all-files .small-txt {
         max-width: 570px;
@@ -215,7 +318,7 @@ nav li {
         width: 250px;
         margin: 0 10px;
     }
-    .large-txt {
+    .all-files .large-txt {
         font-size: 45px;
     }
     .stay-productive .large-txt {
@@ -230,5 +333,28 @@ nav li {
     }
     .box-comment {
         margin: 0;
+    }
+    .get-access {
+        display: flex;
+        justify-content: space-between;
+    }
+    .get-text {
+        text-align: left;
+        margin: 0;
+    }
+    .get-text .medium-txt {
+        font-size: 30px;
+    }
+    .second-form {
+        padding: 1rem;
+    }
+    .get-input input {
+        width: 500px;
+    }
+    .get-button {
+        display: flex;
+    }
+    .padding-col {
+        padding: 1.5rem 3rem;
     }
 }
