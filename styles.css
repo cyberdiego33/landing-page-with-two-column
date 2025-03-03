@@ -264,7 +264,7 @@ footer {
     background-color: var(--Very-Dark-Blue);
 }
 .footer-logo img {
-    fill: #fff;
+    filter: brightness(0) invert(1);
 }
 .address img {
     margin-right: 10px;
